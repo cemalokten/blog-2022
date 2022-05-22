@@ -7,7 +7,7 @@
   },
   "main": "index.ts",
   "scripts": {
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q ./server/index.ts\"",
+    "dev": "concurrently \"ts-node\" \"nodemon -q ./server/index.ts\"",
     "start": "tsc --watch && nodemon ./server/index.ts",
     "lint": "eslint . --ext .ts"
   },
