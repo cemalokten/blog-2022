@@ -1,0 +1,51 @@
+Arguments: 
+  /Users/cemalokten/.nvm/versions/node/v14.19.2/bin/node /opt/homebrew/bin/yarn
+
+PATH: 
+  /Users/cemalokten/.nvm/versions/node/v14.19.2/bin:/Users/cemalokten/.gem/ruby/2.6.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/cemalokten/Library/Android/sdk/platform-tools:/Applications/kitty.app/Contents/MacOS:/Users/cemalokten/Library/Android/sdk/emulator:/Users/cemalokten/Library/Android/sdk/tools:/Users/cemalokten/Library/Android/sdk/tools/bin:/Users/cemalokten/Library/Android/sdk/emulator:/Users/cemalokten/Library/Android/sdk/tools:/Users/cemalokten/Library/Android/sdk/tools/bin:/Users/cemalokten/Library/Android/sdk/platform-tools:/Users/cemalokten/.fzf/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.19.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/cemalokten/code/blog/package.json: Unexpected token { in JSON at position 2
+      at JSON.parse (<anonymous>)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /opt/homebrew/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  { {
+    "name": "cemal-okten-blog",
+    "version": "0.0.1",
+    "description": "",
+    "engines": {
+      "node": "16.x"
+    },
+    "main": "index.js",
+    "scripts": {
+      "dev": "concurrently --kill-others-on-fail \"cd client && yarn start\" \"DEBUG=server nodemon --exec babel-node ./server/index.js\"",
+      "dev:server": "DEBUG=server nodemon --exec babel-node ./server/index.js",
+      "dev:client": "cd client && yarn start",
+  {
+    "dependencies": {
+      "esbuild": "^0.14.39",
+      "express": "^4.18.1",
+      "front-matter": "^4.0.2",
+      "pg": "^8.7.3",
+      "pg-connection-string": "^2.5.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
