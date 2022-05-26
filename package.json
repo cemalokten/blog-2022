@@ -7,12 +7,13 @@
   },
   "main": "index.ts",
   "scripts": {
-    "dev": "concurrently \"ts-node\" \"nodemon -q ./index.ts\"",
-    "start": "tsc --watch && nodemon ./index.ts",
+    "dev": "concurrently \"ts-node\" \"nodemon -q ./server/index.ts\"",
+    "start": "tsc --watch && nodemon ./server/index.ts",
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "@types/express": "^4.17.13",
+    "@types/morgan": "^1.9.3",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "concurrently": "^7.2.0",
@@ -32,4 +33,3 @@
   "author": "cemalokten <cemalokten@gmail.com>",
   "license": "MIT"
 }
-
