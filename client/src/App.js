@@ -1,18 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 
-const getPosts = async () => {
-      await fetch('api/posts')
-        .then((x) => {
-            console.log(x);
-        })
-        .catch((e) => {
-            console.log(e);
-        });
-}
-
-
-getPosts()
 
 function App() {
   return (
