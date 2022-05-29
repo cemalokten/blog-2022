@@ -7,8 +7,8 @@
   },
   "main": "index.ts",
   "scripts": {
-    "dev": "concurrently \"ts-node\" \"nodemon -q ./server/index.ts\"",
-    "start": "tsc --watch && nodemon ./server/index.ts",
+    "dev": "concurrently \"ts-node\" \"nodemon -q ./index.ts\"",
+    "start": "tsc --watch && nodemon ./index.ts",
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
