@@ -18,6 +18,7 @@ function App() {
           <C.H1>H1 TITLE</C.H1>
           <C.Tag mr={SIZE[1]} bg="#0048ff" label={"Typescript"} sm />
           <C.H2>H2 TITLE</C.H2>
+          <C.Button>H2 TITLE</C.Button>
         </C.Box>
       </Cell>
       <Cell width={12}>

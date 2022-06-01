@@ -4,7 +4,7 @@ import reset from "styled-reset";
 const GlobalStyle = createGlobalStyle`
   ${reset}
   body {
-    margin: 0;
+    margin: 20vw;
     font-family: Luculent;
     font-size: 1.5vw
   }
