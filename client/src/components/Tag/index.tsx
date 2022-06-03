@@ -16,6 +16,7 @@ interface Props extends SpaceProps, ColorProps {
 export const _Tag = styled.span<Props>`
   ${space};
   ${color};
+  display: inline;
   font-size: ${({ sm }) => (sm ? SIZE[1] : "")};
   color: ${({ bg }) => (bg ? contrastPicker(bg) : "")};
   padding: 1vw 2vw 0.7vw 2vw;

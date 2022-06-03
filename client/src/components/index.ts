@@ -4,5 +4,22 @@ import { H2 } from "./H2";
 import { Paragraph } from "./Paragraph";
 import { Button } from "./Button";
 import { Box } from "./Box";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import { Heading } from "./Heading";
+import { Details } from "./Details";
+import { Cell } from "./Cell";
 
-export { Tag, H1, H2, Paragraph, Button, Box };
+export {
+  Tag,
+  H1,
+  H2,
+  Paragraph,
+  Button,
+  Box,
+  Header,
+  Heading,
+  Footer,
+  Details,
+  Cell,
+};
