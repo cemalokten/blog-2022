@@ -14,10 +14,17 @@ const Heading: FC<Props> = () => {
           borderBottom={1}
           borderStyle="solid"
           justifyContent="center"
+          alignItems="center"
           position="sticky"
           top={0}
         >
+          <C.Arrow position="absolute" left={0}>
+            ⇽{" "}
+          </C.Arrow>
           <C.H1>Example Heading</C.H1>
+          <C.Box height="100%" position="absolute" right={SIZE[2]} bg="black">
+            <C.Arrow> ⇾</C.Arrow>
+          </C.Box>
         </C.Box>
       </Cell>
     </>

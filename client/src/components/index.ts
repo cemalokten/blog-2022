@@ -9,6 +9,7 @@ import { Footer } from "./Footer";
 import { Heading } from "./Heading";
 import { Details } from "./Details";
 import { Cell } from "./Cell";
+import { Arrow } from "./Arrow";
 
 export {
   Tag,
@@ -22,4 +23,5 @@ export {
   Footer,
   Details,
   Cell,
+  Arrow,
 };
