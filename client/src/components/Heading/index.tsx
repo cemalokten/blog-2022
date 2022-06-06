@@ -18,12 +18,9 @@ const Heading: FC<Props> = () => {
           position="sticky"
           top={0}
         >
-          <C.Arrow position="absolute" left={0}>
-            ⇽{" "}
-          </C.Arrow>
           <C.H1>Example Heading</C.H1>
-          <C.Box height="100%" position="absolute" right={SIZE[2]} bg="black">
-            <C.Arrow> ⇾</C.Arrow>
+          <C.Box height="100%" position="absolute" left={SIZE[2]}>
+            <C.Arrow leftContent="CEMAL" />
           </C.Box>
         </C.Box>
       </Cell>

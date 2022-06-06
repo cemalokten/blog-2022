@@ -6,7 +6,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0vw;
     font-family: Luculent;
-    font-size: 1.6vw
   }
 `;
 

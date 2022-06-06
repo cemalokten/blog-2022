@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { position, PositionProps, color, ColorProps } from "styled-system";
 
 interface Props extends PositionProps {
-  children: React.ReactNode;
+  leftContent?: string;
+  right?: string;
 }
 
 export const _Arrow = styled.button<Props>`
@@ -19,10 +20,10 @@ export const _Arrow = styled.button<Props>`
   background-color: inherit;
   ${position};
 
-  :hover:before {
-    color: white;
-    background-color: black;
-    content: "SOMETHING INTERESTING";
+  :hover:after {
+    content: ${({ leftContent }) => {
+      return `"${leftContent ? leftContent : ""}"`;
+    }};
   }
 
   :active {
@@ -30,8 +31,8 @@ export const _Arrow = styled.button<Props>`
   }
 `;
 
-const Arrow: React.FC<Props> = ({ children, ...props }: Props) => {
-  return <_Arrow {...props}>{children}</_Arrow>;
+const Arrow: React.FC<Props> = ({ ...props }: Props) => {
+  return <_Arrow {...props}>{"⟵ "}</_Arrow>;
 };
 
 export { Arrow };

@@ -22,6 +22,7 @@ interface Props
     ColorProps,
     LayoutProps {
   children: React.ReactNode;
+  hover?: boolean;
 }
 
 const Box = styled.div<Props>`

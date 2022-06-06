@@ -5,7 +5,7 @@ import { SIZE } from "./constants/theme";
 
 function App() {
   return (
-    <Grid>
+    <Grid rowGap="0px">
       <C.Header />
       <C.Heading />
       <C.Details />
