@@ -10,7 +10,7 @@ function App() {
       <C.Heading />
       <C.Details />
       <Cell width={12}>
-        <C.Box mt={50} pl={SIZE[10]} pr={SIZE[10]}>
+        <C.Box pl={SIZE[10]} pr={SIZE[10]}>
           <C.Paragraph>
             Hi my name is Cemal (Je-mal), I am a web developer in the making.
             Once upon a time I worked in the design industry, designing

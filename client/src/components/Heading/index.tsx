@@ -11,8 +11,8 @@ const Heading: FC<Props> = () => {
       <Cell width={12}>
         <C.Box
           p={SIZE[2]}
+          borderRadius={40}
           borderBottom={1}
-          borderStyle="solid"
           justifyContent="center"
           alignItems="center"
           position="sticky"

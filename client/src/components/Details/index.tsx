@@ -10,12 +10,11 @@ const Details: FC<Props> = () => {
     <>
       <C.Cell width={12} height={6}>
         <C.Box
+          borderRadius={40}
           pt={SIZE[4]}
           pb={SIZE[4]}
           pl={SIZE[10]}
           pr={SIZE[10]}
-          borderBottom={1}
-          borderStyle="solid"
           justifyContent="left"
         >
           <Grid columns={12}>
@@ -23,8 +22,13 @@ const Details: FC<Props> = () => {
               <C.H2>TOPICS</C.H2>
             </C.Cell>
             <C.Cell width={9}>
-              <C.Tag mr={SIZE[2]} bg="#39FF14" label={"React"} />
+              <C.Tag
+                mr={[SIZE[6], SIZE[4], SIZE[2]]}
+                bg="#39FF14"
+                label={"React"}
+              />
               <C.Tag mr={SIZE[2]} bg="#0048ff" label={"Typescript"} />
+              <C.Tag mr={SIZE[2]} bg="#FFEFF1" label={"NODE.JS"} />
             </C.Cell>
             <C.Cell width={3}>
               <C.H2>DATE</C.H2>

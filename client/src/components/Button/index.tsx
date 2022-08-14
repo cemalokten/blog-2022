@@ -1,14 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { _H1 } from "../H1";
+import { TYPE } from "../../constants/theme";
+import { typography, TypographyProps } from "styled-system";
 
-type Props = {
-  children: string;
-};
+interface Props extends TypographyProps {
+  children?: React.ReactNode;
+}
 
 export const _Button = styled.button<Props>`
+  ${typography}
   font-family: inherit;
-  font-size: inherit;
   text-decoration: none;
   overflow: hidden;
   border: none;
@@ -27,7 +28,7 @@ export const _Button = styled.button<Props>`
 `;
 
 const Button: React.FC<Props> = ({ children }: Props) => {
-  return <_Button>{children}</_Button>;
+  return <_Button fontSize={TYPE}>{children}</_Button>;
 };
 
 export { Button };

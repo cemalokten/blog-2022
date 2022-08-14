@@ -19,26 +19,29 @@ interface Props extends SpaceProps, ColorProps, TypographyProps {
   border?: boolean;
 }
 
-export const _Tag = styled.span<Props>`
+export const _Pixel = styled.div<Props>`
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
   ${space};
   ${color};
   ${typography};
-  display: inline;
   color: ${({ bg }) => (bg ? contrastPicker(bg) : "")};
-  border-radius: 50%;
   border: ${({ border }) => (border ? "solid 0.1rem black" : "none")};
 
   &:hover {
-    border-radius: 50%;
   }
 `;
 
-const Tag: FC<Props> = ({ label, color, ...props }) => {
+const Pixel: FC<Props> = ({ label, color, ...props }) => {
   return (
-    <_Tag fontSize={TYPE} padding={TAG_PADDING} {...props}>
-      {label?.toUpperCase()}
-    </_Tag>
+    <_Pixel fontSize={TYPE} padding={TAG_PADDING} {...props}>
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+      <div>Four</div>
+      <div>Five</div>
+    </_Pixel>
   );
 };
 
-export { Tag };
+export { Pixel };

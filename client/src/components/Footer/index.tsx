@@ -17,7 +17,6 @@ const Footer: FC<Props> = () => {
           bottom={0}
           position="fixed"
           width={`calc(100% - ${SIZE[4]})`}
-          bg="white"
         >
           <C.Button>GitHub</C.Button>
           <C.Button>Contact</C.Button>

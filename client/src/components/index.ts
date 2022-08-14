@@ -10,6 +10,7 @@ import { Heading } from "./Heading";
 import { Details } from "./Details";
 import { Cell } from "./Cell";
 import { Arrow } from "./Arrow";
+import { Pixel } from "./Pixel";
 
 export {
   Tag,
@@ -24,4 +25,5 @@ export {
   Details,
   Cell,
   Arrow,
+  Pixel,
 };

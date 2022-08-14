@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { position, PositionProps, color, ColorProps } from "styled-system";
+import * as C from "../../components";
 
 interface Props extends PositionProps {
   leftContent?: string;
@@ -9,7 +10,8 @@ interface Props extends PositionProps {
 
 export const _Arrow = styled.button<Props>`
   font-family: inherit;
-  font-size: inherit;
+  font-size: 1.5vw;
+  color: white;
   text-decoration: none;
   overflow: hidden;
   border: none;
@@ -21,8 +23,9 @@ export const _Arrow = styled.button<Props>`
   ${position};
 
   :hover:after {
+    margin-top: 2vw;
     content: ${({ leftContent }) => {
-      return `"${leftContent ? leftContent : ""}"`;
+      return `"${leftContent ? `  ${leftContent}` : ""}"`;
     }};
   }
 
@@ -32,7 +35,11 @@ export const _Arrow = styled.button<Props>`
 `;
 
 const Arrow: React.FC<Props> = ({ ...props }: Props) => {
-  return <_Arrow {...props}>{"⟵ "}</_Arrow>;
+  return (
+    <_Arrow {...props}>
+      <C.H1>{"⟵"}</C.H1>
+    </_Arrow>
+  );
 };
 
 export { Arrow };

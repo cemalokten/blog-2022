@@ -10,12 +10,7 @@ const Header: FC<Props> = () => {
   return (
     <>
       <Cell width={12}>
-        <C.Box
-          p={SIZE[2]}
-          borderBottom={1}
-          borderStyle="solid"
-          justifyContent="space-between"
-        >
+        <C.Box p={SIZE[2]} borderRadius={40} justifyContent="space-between">
           <C.Button>Info</C.Button>
           <C.Button>Blog</C.Button>
         </C.Box>
