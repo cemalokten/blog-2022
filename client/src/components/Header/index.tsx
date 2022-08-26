@@ -1,20 +1,25 @@
-import React from "react";
-import { FC } from "react";
-import styled from "styled-components";
+import React, { FC } from "react";
+import { NavLink } from "react-router-dom";
 import { Props } from "../../constants/Types";
 import * as C from "../../components";
-import { Grid, Cell } from "styled-css-grid";
-import { SIZE } from "../../constants/theme";
 
 const Header: FC<Props> = () => {
   return (
     <>
-      <Cell width={12}>
-        <C.Box p={SIZE[2]} borderRadius={40} justifyContent="space-between">
-          <C.Button>Info</C.Button>
-          <C.Button>Blog</C.Button>
+      <C.Flex justifyContent="space-between" pt={4} pb={4}>
+        <C.Box pl={4}>
+          <C.Button>Cemal Okten</C.Button>
         </C.Box>
-      </Cell>
+        <C.Flex gridGap={4} pr={4}>
+          <NavLink to="/">
+            <C.Button>About</C.Button>
+          </NavLink>
+          <NavLink to="blog">
+            <C.Button>Blog</C.Button>
+          </NavLink>
+          <C.Button>Email</C.Button>
+        </C.Flex>
+      </C.Flex>
     </>
   );
 };

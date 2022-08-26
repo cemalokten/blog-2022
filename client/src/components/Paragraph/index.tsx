@@ -1,7 +1,7 @@
 import React from "react";
 import { FC } from "react";
 import styled from "styled-components";
-import { TYPE } from "../../constants/theme";
+import { P } from "../../constants/theme";
 import { space, SpaceProps, typography, TypographyProps } from "styled-system";
 
 interface Props extends SpaceProps, TypographyProps {
@@ -11,12 +11,15 @@ interface Props extends SpaceProps, TypographyProps {
 export const _Paragraph = styled.p<Props>`
   ${space};
   ${typography};
-  line-height: 1.4em;
+  font-family: "Akkurat-Mono";
+  line-height: 40px;
+  font-style: normal;
+  font-weight: 400;
 `;
 
 const Paragraph: FC<Props> = ({ children, ...props }) => {
   return (
-    <_Paragraph fontSize={TYPE} {...props}>
+    <_Paragraph fontSize={P} {...props}>
       {children}
     </_Paragraph>
   );

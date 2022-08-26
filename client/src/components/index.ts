@@ -5,12 +5,11 @@ import { Paragraph } from "./Paragraph";
 import { Button } from "./Button";
 import { Box } from "./Box";
 import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { Heading } from "./Heading";
-import { Details } from "./Details";
+import { Flex } from "./Flex";
 import { Cell } from "./Cell";
 import { Arrow } from "./Arrow";
 import { Pixel } from "./Pixel";
+import { Layout } from "./Layout";
 
 export {
   Tag,
@@ -19,11 +18,10 @@ export {
   Paragraph,
   Button,
   Box,
+  Flex,
   Header,
-  Heading,
-  Footer,
-  Details,
   Cell,
   Arrow,
   Pixel,
+  Layout,
 };

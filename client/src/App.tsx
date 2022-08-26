@@ -1,25 +1,18 @@
-import React from "react";
-import { Grid, Cell } from "styled-css-grid";
-import * as C from "./components";
-import { SIZE } from "./constants/theme";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Layout } from "./components";
+import { Home, Blog } from "./pages";
 
 function App() {
   return (
-    <Grid rowGap="0px">
-      <C.Header />
-      <C.Heading />
-      <C.Details />
-      <Cell width={12}>
-        <C.Box pl={SIZE[10]} pr={SIZE[10]}>
-          <C.Paragraph>
-            Hi my name is Cemal (Je-mal), I am a web developer in the making.
-            Once upon a time I worked in the design industry, designing
-            furniture and products.
-          </C.Paragraph>
-        </C.Box>
-      </Cell>
-      <C.Footer />
-    </Grid>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

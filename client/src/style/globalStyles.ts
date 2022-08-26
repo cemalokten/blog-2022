@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: black;
     margin: 0vw;
-    font-family: Luculent;
+    font-family: Akkurat-Mono;
   }
 `;
 

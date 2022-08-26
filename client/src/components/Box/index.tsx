@@ -26,7 +26,6 @@ interface Props
 }
 
 const Box = styled.div<Props>`
-  display: flex;
   ${border};
   ${space};
   ${flexbox};
@@ -35,4 +34,5 @@ const Box = styled.div<Props>`
   ${color};
 `;
 
+export type { Props };
 export { Box };

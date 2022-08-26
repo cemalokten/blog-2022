@@ -1,34 +1,40 @@
 import React from "react";
 import styled from "styled-components";
-import { TYPE } from "../../constants/theme";
-import { typography, TypographyProps } from "styled-system";
+import { BUTTON } from "../../constants/theme";
+import { typography, TypographyProps, space, SpaceProps } from "styled-system";
 
-interface Props extends TypographyProps {
+interface Props extends TypographyProps, SpaceProps {
   children?: React.ReactNode;
 }
 
 export const _Button = styled.button<Props>`
   ${typography}
-  font-family: inherit;
-  text-decoration: none;
-  overflow: hidden;
+  ${space};
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  letter-spacing: 0.05em;
   border: none;
   padding: 0;
-  margin: 0;
   background-color: inherit;
   cursor: pointer;
   pointer-events: auto;
+  transition: border 0.25s ease-out;
+  border-bottom: 1px solid transparent;
 
   :hover {
-    color: blue;
+    border-bottom: 1px solid black;
   }
   :active {
     color: red;
   }
 `;
 
-const Button: React.FC<Props> = ({ children }: Props) => {
-  return <_Button fontSize={TYPE}>{children}</_Button>;
+const Button: React.FC<Props> = ({ children, ...props }: Props) => {
+  return (
+    <_Button fontSize={BUTTON} {...props}>
+      {children}
+    </_Button>
+  );
 };
 
 export { Button };
