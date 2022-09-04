@@ -10,7 +10,7 @@ interface Props extends TypographyProps, SpaceProps {
 export const _Button = styled.button<Props>`
   ${typography}
   ${space};
-  font-family: "Helvetica Neue";
+  font-family: "Akkurat-Mono";
   font-style: normal;
   letter-spacing: 0.05em;
   border: none;

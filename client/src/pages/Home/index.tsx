@@ -37,7 +37,7 @@ const Home: FC = () => {
       {tag.map((tagProps: TagProps) => (
         <Tag {...tagProps} key={tagProps.key} />
       ))}
-      <C.Flex pl={4} gridRowGap={4} flexDirection={"column"}>
+      <C.Flex gridRowGap={4} width={4 / 6} flexDirection={"column"}>
         <C.Paragraph>
           Hi my name is Cemal (Je-mal), I am a web developer in the making. Once
           upon a time I worked in the design industry, designing furniture and

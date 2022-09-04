@@ -6,7 +6,9 @@ const Layout = () => {
   return (
     <>
       <C.Header />
-      <Outlet />
+      <C.Box pl={4} pr={4}>
+        <Outlet />
+      </C.Box>
     </>
   );
 };

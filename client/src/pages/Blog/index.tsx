@@ -1,4 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
+import { randomNumber, randomColour } from "../../helpers/utils";
+import { colors } from "../../constants/theme";
 import * as C from "../../components";
 
 const Blog: FC = () => {
@@ -19,11 +21,17 @@ const Blog: FC = () => {
 
   return (
     <>
-      {posts.map(({ title, date }) => (
-        <C.Box width={1 / 3} key={date}>
-          {title}
-        </C.Box>
-      ))}
+      <C.Flex width={[1]} flexWrap={"wrap"}>
+        {posts.map(({ title, date }) => {
+          const bg = randomColour(colors);
+          return (
+            <C.Box width={[1, 1 / 3, 1 / 4]} bg={bg} key={date}>
+              <C.Icon icon={"post1"} width="100px" />
+              {title}
+            </C.Box>
+          );
+        })}
+      </C.Flex>
     </>
   );
 };

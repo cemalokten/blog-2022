@@ -16,7 +16,7 @@ export const FONT = ["22px", "18px"];
 
 export const TYPE = [FONT[1]];
 export const P = [FONT[1]];
-export const BUTTON = [FONT[0]];
+export const BUTTON = [FONT[1]];
 
 export const TAG_PADDING = ["0.5em 0.8em"];
 

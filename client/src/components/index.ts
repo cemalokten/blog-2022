@@ -7,9 +7,8 @@ import { Box } from "./Box";
 import { Header } from "./Header";
 import { Flex } from "./Flex";
 import { Cell } from "./Cell";
-import { Arrow } from "./Arrow";
-import { Pixel } from "./Pixel";
 import { Layout } from "./Layout";
+import { Icon } from "./Icon";
 
 export {
   Tag,
@@ -21,7 +20,6 @@ export {
   Flex,
   Header,
   Cell,
-  Arrow,
-  Pixel,
   Layout,
+  Icon,
 };

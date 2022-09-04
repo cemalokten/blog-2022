@@ -5,6 +5,17 @@ export type Props = {
   color?: string;
   pl?: number;
   pr?: number;
+  width?: string;
+  height?: number;
+  colors?: string[];
+  icon?: string;
+};
+
+export type IconProps = {
+  color?: string;
+  width?: string;
+  height?: number;
+  colors?: string[];
 };
 
 export interface TagProps extends PositionProps {
