@@ -27,6 +27,7 @@ export const _Tag = styled.span<Props>`
   ${color};
   ${typography};
   ${position};
+  font-family: "Akkurat-Mono";
   transform: ${({ rotation }) => `rotate(${rotation}deg)`};
   border-radius: 0.2em;
   display: inline;

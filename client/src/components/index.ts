@@ -5,7 +5,7 @@ import { Paragraph } from "./Paragraph";
 import { Button } from "./Button";
 import { Box } from "./Box";
 import { Header } from "./Header";
-import { Flex } from "./Flex";
+import { Flex, Grid } from "./Flex";
 import { Cell } from "./Cell";
 import { Layout } from "./Layout";
 import { Icon } from "./Icon";
@@ -18,6 +18,7 @@ export {
   Button,
   Box,
   Flex,
+  Grid,
   Header,
   Cell,
   Layout,
