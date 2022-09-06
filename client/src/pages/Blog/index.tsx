@@ -22,11 +22,10 @@ const Blog: FC = () => {
 
   return (
     <>
-      <SimpleGrid columns={[1, 3, 4]} spacing={5}>
+      <SimpleGrid columns={[1, 2, 3]} spacing={5}>
         {posts.map(({ title, date }) => {
-          const bg = randomColour(colors);
           return (
-            <Box bg={bg} key={date}>
+            <Box key={date}>
               <C.Icon icon={"post1"} width="100%" />
               {title}
             </Box>

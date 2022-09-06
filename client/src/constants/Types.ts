@@ -6,7 +6,7 @@ export type Props = {
   pl?: number;
   pr?: number;
   width?: string;
-  height?: number;
+  height?: string;
   colors?: string[];
   icon?: string;
 };
