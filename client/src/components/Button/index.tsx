@@ -1,15 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { BUTTON } from "../../constants/theme";
-import { typography, TypographyProps, space, SpaceProps } from "styled-system";
 
-interface Props extends TypographyProps, SpaceProps {
+interface Props {
   children?: React.ReactNode;
+  fontSize?: string[];
 }
 
 export const _Button = styled.button<Props>`
-  ${typography}
-  ${space};
   font-family: "Akkurat-Mono";
   font-style: normal;
   letter-spacing: 0.05em;

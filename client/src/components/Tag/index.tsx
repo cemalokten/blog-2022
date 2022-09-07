@@ -1,32 +1,22 @@
 import React from "react";
 import { FC } from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { TYPE, TAG_PADDING } from "../../constants/theme";
 import { contrastPicker } from "../../helpers/contrast-picker";
-import {
-  space,
-  SpaceProps,
-  color,
-  ColorProps,
-  typography,
-  TypographyProps,
-  position,
-  PositionProps,
-} from "styled-system";
 
-interface Props extends SpaceProps, ColorProps, TypographyProps, PositionProps {
+interface Props {
   children?: React.ReactNode;
   label?: string;
   bg?: string;
   border?: boolean;
   rotation?: number;
+  opacity?: number;
+  color?: string;
+  fontSize?: string[];
+  padding?: string[];
 }
 
 export const _Tag = styled.span<Props>`
-  ${space};
-  ${color};
-  ${typography};
-  ${position};
   font-family: "Akkurat-Mono";
   transform: ${({ rotation }) => `rotate(${rotation}deg)`};
   border-radius: 0.2em;

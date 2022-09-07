@@ -1,7 +1,7 @@
 import React from "react";
 import { FC } from "react";
 import { Props } from "../../constants/Types";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { Post1 } from "./icons/Post1";
 
 export const IconMap = {

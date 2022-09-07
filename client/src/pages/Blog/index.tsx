@@ -1,7 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import { randomNumber, randomColour } from "../../helpers/utils";
 import { Box, SimpleGrid } from "@chakra-ui/react";
-import { colors } from "../../constants/theme";
+import React, { FC, useEffect, useState } from "react";
 import * as C from "../../components";
 
 const Blog: FC = () => {
@@ -22,7 +20,7 @@ const Blog: FC = () => {
 
   return (
     <>
-      <SimpleGrid columns={[1, 2, 3]} spacing={5}>
+      <SimpleGrid columns={[1, 2, 3, 3]} spacing={5}>
         {posts.map(({ title, date }) => {
           return (
             <Box key={date}>

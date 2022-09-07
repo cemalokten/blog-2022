@@ -2,16 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import GlobalStyle from "./style/globalStyles";
+import { Global } from "@emotion/react";
+import { global } from "./style/globalStyles";
 import { ChakraProvider } from "@chakra-ui/react";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <ChakraProvider resetCSS={false}>
     <React.StrictMode>
-      <GlobalStyle />
+      <Global styles={global} />
       <App />
     </React.StrictMode>
   </ChakraProvider>

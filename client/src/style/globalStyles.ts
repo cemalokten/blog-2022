@@ -1,8 +1,8 @@
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+import { css } from "@emotion/react";
+import emotionReset from "emotion-reset";
 
-const GlobalStyle = createGlobalStyle`
-  ${reset}
+const global = css`
+  ${emotionReset},
   body {
     color: black;
     margin: 0vw;
@@ -10,4 +10,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-export default GlobalStyle;
+export { global };

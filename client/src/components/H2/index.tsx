@@ -1,6 +1,6 @@
 import React from "react";
 import { FC } from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { typography, TypographyProps } from "styled-system";
 import { TYPE } from "../../constants/theme";
 

@@ -1,16 +1,14 @@
 import React from "react";
 import { FC } from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { P } from "../../constants/theme";
-import { space, SpaceProps, typography, TypographyProps } from "styled-system";
 
-interface Props extends SpaceProps, TypographyProps {
+interface Props {
   children?: React.ReactNode;
+  fontSize?: string[];
 }
 
 export const _Paragraph = styled.p<Props>`
-  ${space};
-  ${typography};
   font-family: "Akkurat-Mono";
   line-height: 40px;
   font-style: normal;

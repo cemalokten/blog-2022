@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { grid, GridProps, flexbox, FlexboxProps, width } from "styled-system";
 
 import { Box, Props as BoxProps } from "../Box";
