@@ -1,26 +1,31 @@
-import React, { FC } from "react";
-import { NavLink } from "react-router-dom";
 import { Props } from "../../constants/Types";
+import { NavLink } from "react-router-dom";
+import { Flex, Box } from "@chakra-ui/react";
+import React, { FC } from "react";
 import * as C from "../../components";
 
 const Header: FC<Props> = () => {
   return (
-    <>
-      <C.Flex justifyContent="space-between" pt={4} pb={4}>
-        <C.Box pl={4}>
-          <C.Button>Cemal Okten</C.Button>
-        </C.Box>
-        <C.Flex gridGap={4} pr={4}>
-          <NavLink to="/">
-            <C.Button>About</C.Button>
-          </NavLink>
-          <NavLink to="blog">
-            <C.Button>Blog</C.Button>
-          </NavLink>
-          <C.Button>Email</C.Button>
-        </C.Flex>
-      </C.Flex>
-    </>
+    <Flex
+      justifyContent="space-between"
+      pb={10}
+      pt={10}
+      zIndex={999}
+      position="relative"
+    >
+      <Box>
+        <C.Button>Cemal Okten</C.Button>
+      </Box>
+      <Flex gridGap={8}>
+        <NavLink to="/">
+          <C.Button>About</C.Button>
+        </NavLink>
+        <NavLink to="blog">
+          <C.Button>Blog</C.Button>
+        </NavLink>
+        <C.Button>Email</C.Button>
+      </Flex>
+    </Flex>
   );
 };
 

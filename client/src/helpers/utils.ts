@@ -1,7 +1,9 @@
-import * as T from "../constants/Types";
-
 const randomNumber = (min: number, max: number) => {
   return Math.round(Math.random() * (max - min) + min);
+};
+
+const randomNumberDecimal = (min: number, max: number) => {
+  return Number((Math.random() * (max - min) + min).toFixed(2));
 };
 
 const randomColour = (colors: string[]): string => {
@@ -30,4 +32,4 @@ const contrastPicker = (color: string): "#000000" | "#ffffff" => {
   return result;
 };
 
-export { randomNumber, randomColour, contrastPicker };
+export { randomNumber, randomNumberDecimal, randomColour, contrastPicker };

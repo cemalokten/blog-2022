@@ -1,26 +1,19 @@
 import styled from "@emotion/styled";
-import { grid, GridProps, flexbox, FlexboxProps, width } from "styled-system";
+import { Flex as _Flex, Box as _Box } from "@chakra-ui/react";
 
-import { Box, Props as BoxProps } from "../Box";
-
-interface Props extends GridProps, FlexboxProps, BoxProps {
+interface Props {
   children: React.ReactNode;
   hover?: string;
   gap?: string;
 }
 
-const Flex = styled(Box)<Props>`
+const Flex = styled(_Flex)<Props>`
   display: flex;
   gap: ${({ gap }) => (gap ? `${gap}` : 0)};
-  ${flexbox};
-  ${width}
-  ${grid};
 `;
 
-const Grid = styled(Box)<Props>`
+const Grid = styled(_Box)<Props>`
   display: grid;
-  ${width}
-  ${grid};
 `;
 
 Flex.displayName = "Flex";

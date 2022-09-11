@@ -1,14 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import * as C from "../../components";
+import { Box } from "@chakra-ui/react";
 
 const Layout = () => {
   return (
     <>
-      <C.Header />
-      <C.Box pl={4} pr={4}>
+      <Box pl={10} pr={10}>
+        <C.Header />
         <Outlet />
-      </C.Box>
+      </Box>
     </>
   );
 };

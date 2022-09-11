@@ -1,6 +1,6 @@
 import React from "react";
 import { FC } from "react";
-import styled from "@emotion/styled";
+import { Text } from "@chakra-ui/react";
 import { P } from "../../constants/theme";
 
 interface Props {
@@ -8,18 +8,18 @@ interface Props {
   fontSize?: string[];
 }
 
-export const _Paragraph = styled.p<Props>`
-  font-family: "Akkurat-Mono";
-  line-height: 40px;
-  font-style: normal;
-  font-weight: 400;
-`;
-
 const Paragraph: FC<Props> = ({ children, ...props }) => {
   return (
-    <_Paragraph fontSize={P} {...props}>
+    <Text
+      fontFamily="Akkurat-Mono"
+      lineHeight="40px"
+      fontStyle="normal"
+      fontWeight="400"
+      fontSize={P}
+      {...props}
+    >
       {children}
-    </_Paragraph>
+    </Text>
   );
 };
 

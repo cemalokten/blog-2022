@@ -3,10 +3,11 @@ import emotionReset from "emotion-reset";
 
 const global = css`
   ${emotionReset},
-  body {
+  html, body, #root, #root>div {
     color: black;
     margin: 0vw;
-    font-family: Akkurat-Mono;
+    font-family: "Akkurat-Mono";
+    height: 100vh;
   }
 `;
 

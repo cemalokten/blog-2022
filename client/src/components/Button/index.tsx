@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { BUTTON } from "../../constants/theme";
+import { Text } from "@chakra-ui/react";
 
 interface Props {
   children?: React.ReactNode;
@@ -8,20 +9,19 @@ interface Props {
 }
 
 export const _Button = styled.button<Props>`
-  font-family: "Akkurat-Mono";
-  font-style: normal;
-  letter-spacing: 0.05em;
-  border: none;
-  padding: 0;
   background-color: inherit;
+  border-bottom: 1px solid transparent;
+  border: none;
   cursor: pointer;
+  padding: 0;
   pointer-events: auto;
   transition: border 0.25s ease-out;
-  border-bottom: 1px solid transparent;
+  border: 1px solid transparent;
 
   :hover {
     border-bottom: 1px solid black;
   }
+
   :active {
     color: red;
   }
@@ -30,7 +30,14 @@ export const _Button = styled.button<Props>`
 const Button: React.FC<Props> = ({ children, ...props }: Props) => {
   return (
     <_Button fontSize={BUTTON} {...props}>
-      {children}
+      <Text
+        fontFamily="Akkurat-Mono"
+        fontSize={BUTTON}
+        fontStyle="normal"
+        letterSpacing="0.05em"
+      >
+        {children}
+      </Text>
     </_Button>
   );
 };
