@@ -1,22 +1,31 @@
 import React from "react";
 import { FC } from "react";
-import { Props } from "../../constants/Types";
+import { IconProps } from "../../constants/Types";
 import styled from "@emotion/styled";
 import { Post1 } from "./icons/Post1";
+import { Box, BoxProps } from "@chakra-ui/react";
 
 export const IconMap = {
   post1: Post1,
 };
 
-export const _Icon = styled.div<Props>``;
+interface General extends IconProps, BoxProps {}
 
-const Icon: FC<Props> = ({ width, height, colors, icon }) => {
+export const _Icon = styled.div<IconProps>``;
+
+const Icon: FC<General> = ({
+  iconWidth,
+  height,
+  iconColor,
+  icon,
+  ...props
+}) => {
   const StyledIcon = IconMap[icon as keyof typeof IconMap];
 
   return (
-    <_Icon>
-      <StyledIcon width={width} />
-    </_Icon>
+    <Box {...props}>
+      <StyledIcon iconWidth={iconWidth} iconColor={iconColor} />
+    </Box>
   );
 };
 

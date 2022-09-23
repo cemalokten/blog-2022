@@ -4,26 +4,26 @@ import { Flex, Box } from "@chakra-ui/react";
 import React, { FC } from "react";
 import * as C from "../../components";
 
-const Header: FC<Props> = () => {
+const Header: FC<Props> = ({ heading }) => {
   return (
     <Flex
       justifyContent="space-between"
-      pb={10}
       pt={10}
+      mb={[10, 8]}
       zIndex={999}
       position="relative"
+      flexDirection={["column", "row"]}
     >
       <Box>
-        <C.Button>Cemal Okten</C.Button>
+        <C.Button underline>{heading}</C.Button>
       </Box>
-      <Flex gridGap={8}>
+      <Flex gridGap={5} mt={[5, 0, 0]}>
         <NavLink to="/">
           <C.Button>About</C.Button>
         </NavLink>
         <NavLink to="blog">
           <C.Button>Blog</C.Button>
         </NavLink>
-        <C.Button>Email</C.Button>
       </Flex>
     </Flex>
   );

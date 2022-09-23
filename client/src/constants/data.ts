@@ -7,6 +7,7 @@ const tech = [
   "Express",
   "Typescript",
   "React Query",
+  ":D",
 ];
 
 export { tech };

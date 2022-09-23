@@ -12,11 +12,11 @@ export const SIZE = [
   "10vw",
 ];
 
-export const FONT = ["22px", "18px"];
+export const FONT = ["22px", "18px", "24px", "28px"];
 
-export const TYPE = [FONT[1]];
-export const P = [FONT[1]];
-export const BUTTON = [FONT[1]];
+export const TYPE = [FONT[3]];
+export const P = [FONT[3]];
+export const BUTTON = [FONT[3]];
 
 export const TAG_PADDING = ["0.5em 0.8em"];
 

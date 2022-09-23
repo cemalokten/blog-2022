@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { tech } from "../../constants/data";
 import {
   randomNumber,
@@ -11,39 +10,41 @@ import { Tag } from "../../components/";
 import React, { FC } from "react";
 import * as C from "../../components";
 import { TagProps } from "../../constants/Types";
-import { Flex, Box } from "@chakra-ui/react";
+import { Flex, Box, SimpleGrid } from "@chakra-ui/react";
 
 const Home: FC = () => {
   const [tag, setTag] = useState<any[]>([]);
 
   const createTag = (e: any) => {
+    const label = tech[randomNumber(0, tech.length - 1)];
     const tagSpec = {
       left: e.clientX + "px",
       top: e.clientY + "px",
       backgroundColor: randomColour(colors),
       rotation: randomNumber(-25, 25),
-      label: tech[randomNumber(0, tech.length - 1)],
+      label,
       key() {
         return this.label + this.backgroundColor;
       },
-      height: randomNumberDecimal(1, 5),
+      height: randomNumber(1, 5),
+      radius: randomNumberDecimal(0, 4),
       position: "absolute",
     };
     setTag((prev) => [...prev, tagSpec]);
   };
 
   useEffect(() => {
-    const click = document.getElementById("root");
+    const click = document.getElementById("canvas");
     click?.addEventListener("click", createTag);
     return () => click?.removeEventListener("click", createTag);
   }, []);
 
   return (
-    <Flex id="canvas">
+    <Flex grow={2} flexDirection="column" mb="8em" id="canvas">
       {tag.map((tagProps: TagProps) => (
         <Tag {...tagProps} key={tagProps.key} />
       ))}
-      <Flex gridRowGap={4} width={4 / 6} flexDirection={"column"}>
+      <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
         <C.Paragraph>
           Hi my name is Cemal (Je-mal), I am a web developer in the making. Once
           upon a time I worked in the design industry, designing furniture and
@@ -54,6 +55,9 @@ const Home: FC = () => {
           glockenspiel, a unique image generator, a clock that represents time
           in bars and a page which shows if the ISS is orbiting over land or
           sea. I also collaborated on an imaginary agency site called kindcode.
+        </C.Paragraph>
+        <C.Paragraph>
+          <C.Button>Email</C.Button> / GitHub
         </C.Paragraph>
       </Flex>
     </Flex>

@@ -1,15 +1,15 @@
 import React from "react";
 import { IconProps } from "../../../constants/Types";
 
-const Post1 = ({ width, colors, ...props }: IconProps) => (
+const Post1 = ({ iconWidth, iconColor, ...props }: IconProps) => (
   <svg
-    width={width || "449"}
+    width={iconWidth || "449"}
     viewBox="0 0 449 518"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="none"
   >
-    <rect width="449" height="518" rx="15" fill="#27792F" />
+    <rect width="449" height="518" rx="15" fill={iconColor || "#27792F"} />
     <ellipse
       cx="208.441"
       cy="260.44"

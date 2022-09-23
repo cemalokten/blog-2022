@@ -5,6 +5,7 @@ import { Text } from "@chakra-ui/react";
 
 interface Props {
   children?: React.ReactNode;
+  underline?: boolean;
   fontSize?: string[];
 }
 
@@ -17,21 +18,23 @@ export const _Button = styled.button<Props>`
   pointer-events: auto;
   transition: border 0.25s ease-out;
   border: 1px solid transparent;
-
+  text-align: left;
   :hover {
     border-bottom: 1px solid black;
   }
 
   :active {
-    color: red;
+    color: blue;
   }
 `;
 
 const Button: React.FC<Props> = ({ children, ...props }: Props) => {
   return (
-    <_Button fontSize={BUTTON} {...props}>
+    <_Button {...props}>
       <Text
-        fontFamily="Akkurat-Mono"
+        as="span"
+        borderBottom="red"
+        fontFamily="Helvetica Neue"
         fontSize={BUTTON}
         fontStyle="normal"
         letterSpacing="0.05em"

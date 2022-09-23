@@ -9,13 +9,14 @@ export type Props = {
   height?: string;
   colors?: string[];
   icon?: string;
+  heading?: string;
 };
 
 export type IconProps = {
-  color?: string;
-  width?: string;
-  height?: number;
-  colors?: string[];
+  iconColor?: string;
+  iconWidth?: string;
+  iconHeight?: string;
+  icon?: string;
 };
 
 export interface TagProps extends PositionProps {
@@ -26,3 +27,14 @@ export interface TagProps extends PositionProps {
   label: string;
   key: string;
 }
+
+export type Props2 = {
+  children?: any;
+  color?: string;
+  pl?: number;
+  pr?: number;
+  iconWidth?: string;
+  height?: string;
+  colors?: string[];
+  icon?: string;
+};
