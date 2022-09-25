@@ -1,20 +1,24 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { Global } from "@emotion/react";
 import { global } from "./style/globalStyles";
+import { Global } from "@emotion/react";
 import { ChakraProvider } from "@chakra-ui/react";
+import reportWebVitals from "./reportWebVitals";
+import overrides from "./theme";
+import ReactDOM from "react-dom/client";
+import React from "react";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
 root.render(
-  <ChakraProvider resetCSS={false}>
+  <ChakraProvider theme={overrides} resetCSS={false}>
     <React.StrictMode>
       <Global styles={global} />
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </React.StrictMode>
   </ChakraProvider>
 );

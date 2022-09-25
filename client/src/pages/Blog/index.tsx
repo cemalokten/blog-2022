@@ -1,4 +1,4 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, SimpleGrid, Link } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import React, { FC, useEffect, useState } from "react";
 import * as C from "../../components";
@@ -44,9 +44,9 @@ const Blog: FC = () => {
                 mb={5}
                 iconColor={randomColour(colors)}
               />
-              <NavLink to={`${filename?.slice(0, -3)}`}>
-                <C.Button>{title}</C.Button>
-              </NavLink>
+              <Link as={NavLink} to={`${filename?.slice(0, -3)}`}>
+                {title}
+              </Link>
             </Box>
           );
         })}

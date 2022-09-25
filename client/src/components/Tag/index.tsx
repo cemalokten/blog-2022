@@ -42,6 +42,7 @@ export const _Tag = styled.span<Props>`
   font-size: ${({ fontSize }) => fontSize};
   height: ${({ height }) => height + "em"};
   width: ${({ width }) => width + "px"};
+  z-index: 1;
 
   @keyframes my-animation {
     from {

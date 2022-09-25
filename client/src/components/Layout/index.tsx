@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams, useLocation } from "react-router-dom";
 import * as C from "../../components";
 import { Flex, Box } from "@chakra-ui/react";
 
@@ -11,8 +11,13 @@ const Layout = () => {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+  const { pathname } = useLocation();
+  console.log(pathname);
   return (
-    <Box overflowX="hidden" position="relative">
+    <Box
+      overflowX={pathname === "/" ? "hidden" : "inherit"}
+      position="relative"
+    >
       <Flex direction="column" minH="100vh" pl={10} pr={10}>
         <C.Header heading={title?.replaceAll("-", " ") || "Cemal Okten"} />
         <Outlet />
