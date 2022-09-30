@@ -1,6 +1,4 @@
-import { PositionProps } from "styled-system";
-
-export type Props = {
+export type General = {
   children?: any;
   color?: string;
   pl?: number;
@@ -12,29 +10,49 @@ export type Props = {
   heading?: string;
 };
 
-export type IconProps = {
+export type Icon = {
   iconColor?: string;
   iconWidth?: string;
   iconHeight?: string;
   icon?: string;
 };
 
-export interface TagProps extends PositionProps {
+export type Tag = {
+  children?: React.ReactNode;
+  label?: string;
+  bg?: string;
+  border?: boolean;
+  rotation?: number;
+  opacity?: number;
+  color?: string;
+  fontSize?: string;
+  padding?: string[];
+  top?: string;
+  left?: string;
+  backgroundColor?: string;
+  radius?: number;
+  height?: number;
+  width?: number;
+};
+
+export type TagProps = {
   left: string;
   top: string;
   backgroundColor: string;
   rotation: number;
   label: string;
   key: string;
-}
+};
 
-export type Props2 = {
+export type Post = {
+  title?: string;
+  date?: string;
+  body?: string;
+};
+
+export type Syntax = {
+  node?: any;
+  inline?: any;
+  className?: any;
   children?: any;
-  color?: string;
-  pl?: number;
-  pr?: number;
-  iconWidth?: string;
-  height?: string;
-  colors?: string[];
-  icon?: string;
 };
