@@ -1,5 +1,4 @@
 import type { ComponentStyleConfig } from "@chakra-ui/theme";
-import { P } from "../../constants/theme";
 
 const Text: ComponentStyleConfig = {
   baseStyle: {
@@ -7,7 +6,6 @@ const Text: ComponentStyleConfig = {
     lineHeight: "45px",
     fontStyle: "normal",
     fontWeight: "400",
-    fontSize: P,
   },
 };
 
