@@ -1,75 +1,32 @@
-import React, { useState, useEffect, FC } from "react";
+import React, { FC } from "react";
 import styled from "@emotion/styled";
-import { TYPE, TAG_PADDING } from "../../constants/theme";
-import { contrastPicker } from "../../helpers/contrast-picker";
+import { Tag as TagType } from "../../constants/Types";
 
-interface Props {
-  children?: React.ReactNode;
-  label?: string;
-  bg?: string;
-  border?: boolean;
-  rotation?: number;
-  opacity?: number;
-  color?: string;
-  fontSize?: string[];
-  padding?: string[];
-  top?: string;
-  left?: string;
-  backgroundColor?: string;
-  radius?: number;
-  height?: number;
-  width?: number;
-}
-
-export const _Tag = styled.span<Props>`
+export const _Tag = styled.span<TagType>`
+  position: absolute;
   display: flex;
-  white-space: pre;
   justify-content: center;
   align-items: center;
+  transform: ${({ rotation }) => `rotate(${rotation}deg)`};
   left: ${({ left }) => left};
   top: ${({ top }) => top};
-  position: absolute;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  font-family: "Akkurat-Mono";
-  transform: ${({ rotation }) => `rotate(${rotation}deg)`};
-  border-radius: ${({ radius = 0.3 }) => radius + "em"};
-  color: ${({ bg }) => (bg ? contrastPicker(bg) : "")};
-  border: ${({ border }) => (border ? "solid 0.2rem black" : "none")};
-  pointer-events: none;
   opacity: ${({ opacity }) => opacity};
   transition: opacity 0.25s ease-in-out;
-  padding: ${({ padding }) => padding};
+  border-radius: ${({ radius = 0.3 }) => radius + "em"};
+  border: ${({ border }) => (border ? "solid 0.2rem black" : "none")};
   font-size: ${({ fontSize }) => fontSize};
+  font-family: "Lab Mono";
+  font-weight: 400;
+  pointer-events: none;
+  padding: ${({ padding }) => padding + "px"};
   height: ${({ height }) => height + "em"};
-  width: ${({ width }) => width + "px"};
+  white-space: pre;
   z-index: 1;
-
-  @keyframes my-animation {
-    from {
-      transform: translateY(20px);
-    }
-    to {
-      transform: translateY(0px);
-    }
-  }
 `;
 
-const Tag: FC<Props> = ({ label, color, ...props }) => {
-  const [show, setShow] = useState(true);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShow(false);
-  //   }, 3000);
-  // }, []);
-
-  return show ? (
-    <_Tag fontSize={TYPE} padding={TAG_PADDING} {...props}>
-      {label}
-    </_Tag>
-  ) : (
-    <></>
-  );
+const Tag: FC<TagType> = ({ label, color, ...props }) => {
+  return <_Tag {...props}>{label}</_Tag>;
 };
 
 export { Tag };

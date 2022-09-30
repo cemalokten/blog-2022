@@ -2,12 +2,8 @@ import { Box, SimpleGrid, Link } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import React, { FC, useEffect, useState } from "react";
 import * as C from "../../components";
-import {
-  randomNumber,
-  randomNumberDecimal,
-  randomColour,
-} from "../../helpers/utils";
-import { colors } from "../../constants/theme";
+import { randomColour } from "../../helpers/utils";
+import { colors, spacing } from "../../constants/theme";
 
 interface PostsProps {
   posts?: string[];
@@ -34,15 +30,15 @@ const Blog: FC = () => {
 
   return (
     <>
-      <SimpleGrid columns={[1, 2, 3, 3]} spacing={8} mb={10}>
+      <SimpleGrid columns={[1, 2, 3, 3]} spacing={spacing} mb={10}>
         {posts.map(({ title, date, filename }: PostsProps) => {
           return (
-            <Box key={date} mb={5}>
+            <Box key={date} mb={4}>
               <C.Icon
                 icon={"post1"}
-                iconWidth="100%"
-                mb={5}
                 iconColor={randomColour(colors)}
+                iconWidth="100%"
+                mb={4}
               />
               <Link as={NavLink} to={`${filename?.slice(0, -3)}`}>
                 {title}

@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect } from "react";
-import { tech } from "../../constants/data";
-import * as util from "../../helpers/utils";
-import { colors } from "../../constants/theme";
-import { Tag } from "../../components/";
 import React, { FC } from "react";
-import { TagProps } from "../../constants/Types";
 import { Flex, Link, Text } from "@chakra-ui/react";
+import { Tag } from "../../components/";
+import { TagProps } from "../../constants/Types";
+import { colors } from "../../constants/theme";
+import { tech } from "../../constants/data";
+import { useState, useEffect } from "react";
+import * as util from "../../helpers/utils";
 
 const Home: FC = () => {
   const [tag, setTag] = useState<any[]>([]);
@@ -16,14 +16,12 @@ const Home: FC = () => {
       label,
       top: e.clientY + "px",
       left: e.clientX + "px",
-      height: util.randomNumber(1, 5),
+      height: util.randomNumber(1.3, 5),
       position: "absolute",
       backgroundColor: util.randomColour(colors),
+      padding: util.randomNumber(10, 30),
       rotation: util.randomNumber(-25, 25),
       radius: util.randomNumberDecimal(0, 4),
-      key() {
-        return this.label + this.backgroundColor;
-      },
     };
     setTag((prev) => [...prev, tagSpec]);
   };
@@ -35,12 +33,12 @@ const Home: FC = () => {
   }, []);
 
   return (
-    <Flex grow={2} flexDirection="column" mb="8em" id="canvas">
+    <Flex grow={1} flexDirection="column">
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
         <Text>
           Hi my name is Cemal (Je-mal), I am a web developer in the making. Once
           upon a time I worked in the design industry, designing furniture and
-          products.{" "}
+          products.
         </Text>
         <Text>
           Some projects I have recently enjoyed working on include a keyboard
@@ -52,8 +50,8 @@ const Home: FC = () => {
           <Link>Blog</Link> / GitHub
         </Text>
       </Flex>
-      {tag.map((tagProps: TagProps) => (
-        <Tag {...tagProps} key={tagProps.key} />
+      {tag.map((tagProps: TagProps, id: number) => (
+        <Tag {...tagProps} key={id} />
       ))}
     </Flex>
   );

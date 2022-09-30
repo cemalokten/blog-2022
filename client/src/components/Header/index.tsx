@@ -1,23 +1,34 @@
-import { Props } from "../../constants/Types";
-import { NavLink } from "react-router-dom";
-import { Flex, Box, Link } from "@chakra-ui/react";
 import React, { FC } from "react";
-import * as C from "../../components";
+import { Flex, Heading, Link } from "@chakra-ui/react";
+import { NavLink, useParams } from "react-router-dom";
+import { General } from "../../constants/Types";
+import { spacing } from "../../constants/theme";
 
-const Header: FC<Props> = ({ heading }) => {
+const Header: FC<General> = () => {
+  const { title: _title } = useParams();
+
+  const title = _title
+    ?.replaceAll("-", " ")
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
   return (
     <Flex
       justifyContent="space-between"
-      pt={10}
-      mb={[10, 8]}
+      mb={spacing}
       position="relative"
       flexDirection={["column", "row"]}
       lineHeight="45px"
+      gap={spacing}
+      zIndex="2"
     >
       <Flex>
-        <Link>{heading}</Link>
+        <Heading as="h1" fontSize="28px" lineHeight="45px">
+          {title || "Cemal Okten"}
+        </Heading>
       </Flex>
-      <Flex gridGap={5}>
+      <Flex gridGap={4}>
         <Link as={NavLink} to="/">
           About
         </Link>

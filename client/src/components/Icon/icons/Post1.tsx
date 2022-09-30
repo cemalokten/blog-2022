@@ -1,7 +1,7 @@
 import React from "react";
-import { IconProps } from "../../../constants/Types";
+import { Icon } from "../../../constants/Types";
 
-const Post1 = ({ iconWidth, iconColor, ...props }: IconProps) => (
+const Post1 = ({ iconWidth, iconColor, ...props }: Icon) => (
   <svg
     width={iconWidth || "449"}
     viewBox="0 0 449 518"
