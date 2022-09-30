@@ -1,12 +1,12 @@
-import { global } from "./style/globalStyles";
-import { Global } from "@emotion/react";
-import { ChakraProvider } from "@chakra-ui/react";
-import reportWebVitals from "./reportWebVitals";
-import overrides from "./theme";
-import ReactDOM from "react-dom/client";
-import React from "react";
 import App from "./App";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import overrides from "./theme";
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Global } from "@emotion/react";
+import { global } from "./style/globalStyles";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
