@@ -1,28 +1,16 @@
-import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import React, { useState, useEffect, FC } from "react";
-import ReactMarkdown from "react-markdown";
-import { useParams } from "react-router-dom";
 import * as C from "../../components";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import ReactMarkdown from "react-markdown";
+import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
-import ChakraUIRenderer from "chakra-ui-markdown-renderer";
-import { P } from "../../constants/theme";
-
-interface PostProps {
-  title?: string;
-  date?: string;
-  body?: string;
-}
-
-interface CodeProps {
-  node?: any;
-  inline?: any;
-  className?: any;
-  children?: any;
-}
+import { useParams } from "react-router-dom";
+import { spacing } from "../../constants/theme";
+import { Post as PostType, Syntax } from "../../constants/Types";
 
 const Post: FC = () => {
-  const [post, setPost] = useState<PostProps>({});
+  const [post, setPost] = useState<PostType>({});
   const { title } = useParams();
 
   const getPost = async () => {
@@ -44,13 +32,14 @@ const Post: FC = () => {
       const { children } = props;
       return <Text>{children}</Text>;
     },
-    code({ node, inline, className, children, ...props }: CodeProps) {
+    code({ node, inline, className, children, ...props }: Syntax) {
       const match = /language-(\w+)/.exec(className || "");
       return !inline && match ? (
         <SyntaxHighlighter
           style={oneLight}
           customStyle={{
             fontSize: "0.8em",
+            fontFamily: "Lab Mono",
           }}
           language={match[1]}
           PreTag="div"
@@ -68,19 +57,15 @@ const Post: FC = () => {
 
   return (
     <>
-      <SimpleGrid columns={[3, 3, 6, 6]} spacing={8} mb={8}>
+      <SimpleGrid columns={[3]} spacing={spacing} mb={spacing}>
         <C.Icon icon={"post1"} iconWidth="100%" />
         <C.Icon icon={"post1"} iconWidth="100%" iconColor="#125706" />
         <C.Icon icon={"post1"} iconWidth="100%" iconColor="red" />
-        <C.Icon icon={"post1"} iconWidth="100%" iconColor="yellow" />
-        <C.Icon icon={"post1"} iconWidth="100%" iconColor="blue" />
-        <C.Icon icon={"post1"} iconWidth="100%" iconColor="maroon" />
       </SimpleGrid>
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
         <ReactMarkdown components={ChakraUIRenderer(newTheme)} skipHtml>
           {post?.body as string}
         </ReactMarkdown>
-        <ReactMarkdown>{post?.date as string}</ReactMarkdown>
       </Flex>
     </>
   );
