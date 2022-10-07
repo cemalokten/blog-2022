@@ -29,6 +29,7 @@ const Home: FC = () => {
   useEffect(() => {
     const click = document.getElementById("canvas");
     click?.addEventListener("click", createTag);
+    console.log(tag.length);
     return () => click?.removeEventListener("click", createTag);
   }, []);
 
@@ -36,9 +37,8 @@ const Home: FC = () => {
     <Flex grow={1} flexDirection="column">
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
         <Text>
-          Hi my name is Cemal (Je-mal), I am a web developer in the making. Once
-          upon a time I worked in the design industry, designing furniture and
-          products.
+          Hi my name is Cemal (Je-mal), I am a web developer. Once upon a time I
+          worked in the design industry, designing furniture and products.
         </Text>
         <Text>
           Some projects I have recently enjoyed working on include a keyboard

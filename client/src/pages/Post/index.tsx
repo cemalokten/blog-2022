@@ -2,7 +2,7 @@ import React, { useState, useEffect, FC } from "react";
 import * as C from "../../components";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import ReactMarkdown from "react-markdown";
-import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Flex, SimpleGrid, Text, Image } from "@chakra-ui/react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { useParams } from "react-router-dom";
@@ -32,6 +32,18 @@ const Post: FC = () => {
       const { children } = props;
       return <Text>{children}</Text>;
     },
+    strong: (props: any) => {
+      const { children } = props;
+      return (
+        <Text fontWeight="medium" display="inline">
+          {children}
+        </Text>
+      );
+    },
+    img: (props: any) => {
+      const { src } = props;
+      return <Image boxSize="100%" src={src} />;
+    },
     code({ node, inline, className, children, ...props }: Syntax) {
       const match = /language-(\w+)/.exec(className || "");
       return !inline && match ? (
@@ -58,13 +70,21 @@ const Post: FC = () => {
   return (
     <>
       <SimpleGrid columns={[3]} spacing={spacing} mb={spacing}>
-        <C.Icon icon={"post1"} iconWidth="100%" />
-        <C.Icon icon={"post1"} iconWidth="100%" iconColor="#125706" />
-        <C.Icon icon={"post1"} iconWidth="100%" iconColor="red" />
+        {post?.iconColor?.map((color, index) => (
+          <C.Icon
+            key={index}
+            icon={"post1"}
+            iconWidth="100%"
+            iconColor={color}
+          />
+        ))}
       </SimpleGrid>
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
         <ReactMarkdown components={ChakraUIRenderer(newTheme)} skipHtml>
           {post?.body as string}
+        </ReactMarkdown>
+        <ReactMarkdown components={ChakraUIRenderer(newTheme)} skipHtml>
+          {`Date: ${post?.date as string}`}
         </ReactMarkdown>
       </Flex>
     </>
