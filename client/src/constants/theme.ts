@@ -1,4 +1,4 @@
-export const spacing = [2, 4, 6];
+export const spacing = [2, 3, 4];
 export const colors = [
   "Aqua",
   "Aquamarine",
@@ -17,7 +17,6 @@ export const colors = [
   "DarkGreen",
   "DarkMagenta",
   "DarkOrange",
-  "DarkOrchid",
   "DarkRed",
   "DarkSalmon",
   "DarkSlateBlue",
@@ -47,14 +46,12 @@ export const colors = [
   "Olive",
   "Orange",
   "OrangeRed",
-  "Orchid",
   "PaleGreen",
   "PaleTurquoise",
   "PeachPuff",
   "Peru",
   "Pink",
   "Plum",
-  "Purple",
   "RebeccaPurple",
   "Red",
   "RosyBrown",
