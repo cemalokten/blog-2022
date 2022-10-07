@@ -48,6 +48,7 @@ export type Post = {
   title?: string;
   date?: string;
   body?: string;
+  iconColor?: string[];
 };
 
 export type Syntax = {

@@ -1,8 +1,5 @@
 export type Attributes = {
   title: string;
-  tags: string[];
-  background: string[];
-  color: string[];
-  rotation: number[];
+  iconColor: string[];
   date: string;
 };
