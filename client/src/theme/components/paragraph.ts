@@ -5,7 +5,6 @@ const Text: ComponentStyleConfig = {
     letterSpacing: "0.02em",
     lineHeight: "45px",
     fontStyle: "normal",
-    fontWeight: "400",
   },
 };
 
