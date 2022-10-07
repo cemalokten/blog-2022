@@ -12,10 +12,7 @@ const getPostUseCase = async (filename: string) => {
       parseFrontMatter(file.toString());
     return {
       title: attributes.title,
-      tags: attributes.tags,
-      background: attributes.background,
-      color: attributes.color,
-      rotation: attributes.rotation,
+      iconColor: attributes.iconColor,
       date: attributes.date,
       body,
     };
@@ -35,10 +32,7 @@ const getPostsUseCase = async () => {
 
       return {
         title: attributes.title,
-        tags: attributes.tags,
-        background: attributes.background,
-        color: attributes.color,
-        rotation: attributes.rotation,
+        iconColor: attributes.iconColor,
         date: attributes.date,
         filename,
       };
