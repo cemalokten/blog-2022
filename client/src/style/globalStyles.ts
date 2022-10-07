@@ -3,6 +3,13 @@ import emotionReset from "emotion-reset";
 
 const global = css`
   ${emotionReset},
+
+  @font-face {
+    font-family: "LabMono";
+    src: url("./fonts/labmono-regular-web.woff2") format("woff2"),
+      url("./fonts/labmono-regular-web.woff") format("woff");
+  }
+
   html {
     box-sizing: border-box;
     overflow-x: hidden;
@@ -13,6 +20,10 @@ const global = css`
     box-sizing: inherit;
   }
 
+  :root {
+    font-size: 28px;
+  }
+
   html,
   body,
   #root,
@@ -20,13 +31,22 @@ const global = css`
     color: black;
     margin: 0vw;
     font-family: "Helvetica Neue";
-    font-size: 28px;
+    font-size: 1rem;
     height: 100%;
   }
 
   pre {
     margin: 30px 0;
     font-size: 20px;
+  }
+
+  strong {
+    font-family: "Helvetica Neue";
+    font-weight: bold;
+  }
+
+  li {
+    list-style: none;
   }
 `;
 
