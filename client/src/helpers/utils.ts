@@ -32,4 +32,26 @@ const contrastPicker = (color: string): "#000000" | "#ffffff" => {
   return result;
 };
 
-export { randomNumber, randomNumberDecimal, randomColour, contrastPicker };
+const parseFrontMatter = (md: string) => {
+  const fm = {} as { key: string; body: string };
+  const reg = /(?<=---)(.*)(?=---)/s;
+  const fmAll = /.*[---]/s;
+  fm.body = md.split(fmAll)[1].trim();
+  const spec = reg.exec(md)![0];
+  spec
+    .trim()
+    .split(/\r?\n|\r|\n/g)
+    .forEach((v) => {
+      const [key, value] = v.split(":");
+      fm[key as keyof typeof fm] = value;
+    });
+  return fm;
+};
+
+export {
+  randomNumber,
+  randomNumberDecimal,
+  randomColour,
+  contrastPicker,
+  parseFrontMatter,
+};
