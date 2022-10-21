@@ -29,7 +29,6 @@ const Home: FC = () => {
   useEffect(() => {
     const click = document.getElementById("canvas");
     click?.addEventListener("click", createTag);
-    console.log(tag.length);
     return () => click?.removeEventListener("click", createTag);
   }, []);
 

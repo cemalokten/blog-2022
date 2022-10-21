@@ -1,5 +1,6 @@
 {
   "dependencies": {
     "@types/rebass": "^4.0.10"
-  }
+  },
+  "devDependencies": {}
 }

@@ -1,16 +1,14 @@
----
-title: My blog [insert catchy title]
-iconColor: ['#27792F', '#125706', '#0F4107']
-date: 6rd October 2022
----
+----
+title:Welcome to my blog
+iconColor:#27792F, #125706, #0F4107
+date:6rd October 2022
+----
 
 This is probably my 5th attempt at trying to get a site up and running, it's only taken me about 6 months, and here it is in all its glory! I will not abandon you with a single post like all the other blogs I've started, feel my optimism! 
 
 I think my main problem was that whenever I would start work I'd get distracted by some shiny new framework or something that was more interesting that what I was currently using.
 
-I also redesigned everything about 10 times, this happens to me a lot when there is no deadline, take a look at the ones that didn't make the cut:
-
-![](https://i.imgur.com/lJgY3Pa.png)
+I also redesigned everything about 10 times, this happens to me a lot when there is no deadline in-site, take a look at the ones that didn't make the cut:
 
 After all the back and fourth I realised I needed a site that would encourage me to actually write stuff, instead of it looking cool and me never updating it, which is how all my other endeavours have gone.
 
@@ -29,10 +27,14 @@ This is my current setup, which I'll probably write about in more detail in the 
 - React router
 - Emotion
 - Chakra (the styled system part not the components)
-- Node.js
+- ~~ Node.js ~~
 - Express
 - Front-matter
 - Hosted for free on Netlify
 
-Hope you like it!
 
+![](https://i.imgur.com/v1PokV3.png)
+
+~~~
+const hey = 1
+~~~

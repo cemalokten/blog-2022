@@ -8,10 +8,10 @@ const Header: FC<General> = () => {
   const { title: _title } = useParams();
 
   const title = _title
-    ?.replaceAll("-", " ")
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+    ?.charAt(0)
+    .toUpperCase()
+    .concat(_title?.substring(1))
+    ?.replaceAll("-", " ");
 
   return (
     <Flex
