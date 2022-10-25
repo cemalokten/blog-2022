@@ -30,7 +30,7 @@ const global = css`
   #root > div {
     color: black;
     margin: 0vw;
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
     font-size: 1rem;
     height: 100%;
   }
@@ -41,7 +41,7 @@ const global = css`
   }
 
   strong {
-    font-family: "Helvetica Neue";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
     font-weight: bold;
   }
 
