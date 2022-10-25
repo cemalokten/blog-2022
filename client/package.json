@@ -25,7 +25,8 @@
   "source": "src/index.html",
   "scripts": {
     "cleanup": "rm -rf .parcel-cache dist",
-    "start": "npm run cleanup && parcel -p 3000"
+    "start": "npm run cleanup && parcel -p 3000",
+    "build": "parcel build"
   },
   "eslintConfig": {
     "extends": [
