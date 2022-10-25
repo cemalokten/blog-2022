@@ -32,4 +32,51 @@ const contrastPicker = (color: string): "#000000" | "#ffffff" => {
   return result;
 };
 
-export { randomNumber, randomNumberDecimal, randomColour, contrastPicker };
+type Fm = {
+  title: string;
+  date: string;
+  body: string;
+  key?: string;
+  filename?: string;
+};
+
+const parseFrontMatter = (md: string, file: string) => {
+  const reg = /(?<=---)(.*)(?=---)/s;
+  const fmAll = /.*[---]/s;
+  const fm = {} as Fm;
+  // fm.body = md.split(fmAll)[1].trim();
+  fm.body = md
+    .substring(md.lastIndexOf("---"))
+    .trim()
+    .split("\n")
+    .slice(2)
+    .join("\n");
+  fm.filename = file;
+  const spec = reg.exec(md)![0].trim();
+  spec
+    .trim()
+    .split(/\r?\n|\r|\n/g)
+    .forEach((v) => {
+      const [key, value] = v.split(":");
+      fm[key as keyof typeof fm] = value;
+    });
+  return fm;
+};
+
+const parseFrontMatterAll = (md: string[], file: string[]) => {
+  const arr: Fm[] = [];
+  md.forEach((md, i) => {
+    const data = parseFrontMatter(md, Object.keys(file)[i]);
+    arr.push(data);
+  });
+  return arr;
+};
+
+export {
+  randomNumber,
+  randomNumberDecimal,
+  randomColour,
+  contrastPicker,
+  parseFrontMatter,
+  parseFrontMatterAll,
+};

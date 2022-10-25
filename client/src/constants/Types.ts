@@ -48,7 +48,7 @@ export type Post = {
   title?: string;
   date?: string;
   body?: string;
-  iconColor?: string[];
+  iconColor?: string;
 };
 
 export type Syntax = {
@@ -56,4 +56,13 @@ export type Syntax = {
   inline?: any;
   className?: any;
   children?: any;
+};
+
+export type Fm = {
+  title: string;
+  date: string;
+  body: string;
+  iconColor?: string;
+  key?: string;
+  filename?: string;
 };
