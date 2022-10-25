@@ -36,17 +36,15 @@ const Home: FC = () => {
     <Flex grow={1} flexDirection="column">
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
         <Text>
-          Hi my name is Cemal (Je-mal), I am a web developer. Once upon a time I
-          worked in the design industry, designing furniture and products.
+          I&lsquo;m a London based web-developer, once upon a time I worked in
+          the design industry, designing furniture and products. These days I
+          love learning how to make things with code.{" "}
         </Text>
         <Text>
-          Some projects I have recently enjoyed working on include a keyboard
-          glockenspiel, a unique image generator, a clock that represents time
-          in bars and a page which shows if the ISS is orbiting over land or
-          sea. I also collaborated on an imaginary agency site called kindcode.
-        </Text>
-        <Text>
-          <Link>Blog</Link> / GitHub
+          Get in touch with him via{" "}
+          <Link href="mailto:cemalokten@gmail.com">email</Link>,{" "}
+          <Link href="https://twitter.com/cemalokten">twitter</Link> or{" "}
+          <Link href="https://github.com/cemalokten">github</Link>.
         </Text>
       </Flex>
       {tag.map((tagProps: TagProps, id: number) => (

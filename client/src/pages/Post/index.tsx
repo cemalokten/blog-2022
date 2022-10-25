@@ -1,36 +1,24 @@
-import React, { useState, useEffect, FC } from "react";
-import * as C from "../../components";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import React, { useState, useEffect, FC } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Flex, SimpleGrid, Text, Image } from "@chakra-ui/react";
+import { Post as PostType, Syntax } from "../../constants/Types";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { useParams } from "react-router-dom";
-import { spacing } from "../../constants/theme";
-import { Post as PostType, Syntax } from "../../constants/Types";
 import { parseFrontMatter } from "../../helpers/utils";
+import { spacing } from "../../constants/theme";
+import { useParams } from "react-router-dom";
+import * as C from "../../components";
 
 const Post: FC = () => {
   const [post, setPost] = useState<PostType>({});
   const { title } = useParams();
 
-  // const getPost = async () => {
-  //   const response = await fetch(`/api/post/${title}`);
-  //   if (response.ok) {
-  //     const json = await response.json();
-  //     setPost(json);
-  //   } else {
-  //     alert("HTTP-Error: " + response.status);
-  //   }
-  // };
-  console.log(process.env.PUBLIC_URL, "URL");
-
   const getPost = async () => {
     try {
       const file = await fetch(`/posts/${title}.md`).then((res) => res.text());
-      console.log(file);
       const fm = parseFrontMatter(file, title + ".md");
-      console.log(fm);
       setPost(fm);
     } catch (error) {
       console.log(error);
@@ -45,6 +33,10 @@ const Post: FC = () => {
     p: (props: any) => {
       const { children } = props;
       return <Text>{children}</Text>;
+    },
+    li: (props: any) => {
+      const { children } = props;
+      return <Text>• {children}</Text>;
     },
     strong: (props: any) => {
       const { children } = props;
@@ -94,7 +86,11 @@ const Post: FC = () => {
         ))}
       </SimpleGrid>
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
-        <ReactMarkdown components={ChakraUIRenderer(newTheme)} skipHtml>
+        <ReactMarkdown
+          components={ChakraUIRenderer(newTheme)}
+          remarkPlugins={[remarkGfm]}
+          skipHtml
+        >
           {post?.body as string}
         </ReactMarkdown>
       </Flex>

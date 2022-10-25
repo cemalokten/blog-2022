@@ -57,3 +57,12 @@ export type Syntax = {
   className?: any;
   children?: any;
 };
+
+export type Fm = {
+  title: string;
+  date: string;
+  body: string;
+  iconColor?: string;
+  key?: string;
+  filename?: string;
+};
