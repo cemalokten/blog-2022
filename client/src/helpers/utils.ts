@@ -41,10 +41,9 @@ type Fm = {
 };
 
 const parseFrontMatter = (md: string, file: string) => {
-  const reg = /(?<=---)(.*)(?=---)/s;
+  const reg = /(.*)(?=---)/s;
   const fmAll = /.*[---]/s;
   const fm = {} as Fm;
-  // fm.body = md.split(fmAll)[1].trim();
   fm.body = md
     .substring(md.lastIndexOf("---"))
     .trim()

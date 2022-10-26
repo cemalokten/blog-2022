@@ -2,7 +2,7 @@ import type { ComponentStyleConfig } from "@chakra-ui/theme";
 
 const Link: ComponentStyleConfig = {
   baseStyle: {
-    fontFamily: "Helvetica Neue",
+    fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
     fontStyle: "normal",
     fontWeight: "400",
     letterSpacing: "0.02em",

@@ -35,13 +35,9 @@ const Home: FC = () => {
   return (
     <Flex grow={1} flexDirection="column">
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
+        <Text>I&lsquo;m a London based web-developer.</Text>
         <Text>
-          I&lsquo;m a London based web-developer, once upon a time I worked in
-          the design industry, designing furniture and products. These days I
-          love learning how to make things with code.{" "}
-        </Text>
-        <Text>
-          Get in touch with him via{" "}
+          Get in touch with me via{" "}
           <Link href="mailto:cemalokten@gmail.com">email</Link>,{" "}
           <Link href="https://twitter.com/cemalokten">twitter</Link> or{" "}
           <Link href="https://github.com/cemalokten">github</Link>.
