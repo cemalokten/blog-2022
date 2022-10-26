@@ -1,11 +1,16 @@
 import React, { FC } from "react";
 import { Flex, Heading, Link } from "@chakra-ui/react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams, useLocation } from "react-router-dom";
 import { General } from "../../constants/Types";
 import { spacing } from "../../constants/theme";
 
 const Header: FC<General> = () => {
   const { title: _title } = useParams();
+  const _location = useLocation();
+
+  console.log(_location.pathname);
+
+  const titleAlt = _location.pathname === "/blog" ? "Blog" : "Readme";
 
   const title = _title
     ?.charAt(0)
@@ -25,7 +30,7 @@ const Header: FC<General> = () => {
     >
       <Flex>
         <Heading as="h1" fontSize="28px" lineHeight="45px">
-          {title || "Cemal Okten"}
+          {title ? title : titleAlt}
         </Heading>
       </Flex>
       <Flex gridGap={4}>

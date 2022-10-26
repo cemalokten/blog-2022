@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
 import { global } from "./style/globalStyles";
+import Fonts from "./theme/components/fonts";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,6 +15,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <ChakraProvider theme={overrides} resetCSS={false}>
+    <Fonts />
     <React.StrictMode>
       <Global styles={global} />
       <BrowserRouter>

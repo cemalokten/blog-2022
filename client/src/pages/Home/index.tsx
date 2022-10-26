@@ -36,7 +36,8 @@ const Home: FC = () => {
     <Flex grow={1} flexDirection="column">
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
         <Text>
-          Hi, I am a London based web-developer with a passion for making stuff.
+          Hi, I am a developer based in London with a passion for making stuff
+          and a lack of things to say about myself.
         </Text>
         <Text>
           Get in touch with me via{" "}
