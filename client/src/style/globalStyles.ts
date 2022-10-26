@@ -5,7 +5,7 @@ const global = css`
   ${emotionReset},
 
   @font-face {
-    font-family: "LabMono";
+    font-family: "Lab Mono";
     src: url("./fonts/labmono-regular-web.woff2") format("woff2"),
       url("./fonts/labmono-regular-web.woff") format("woff");
   }

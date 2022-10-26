@@ -35,12 +35,14 @@ const Home: FC = () => {
   return (
     <Flex grow={1} flexDirection="column">
       <Flex gridRowGap={4} width={["100%", "85%"]} flexDirection={"column"}>
-        <Text>I&lsquo;m a London based web-developer.</Text>
+        <Text>
+          Hi, I am a London based web-developer with a passion for making stuff.
+        </Text>
         <Text>
           Get in touch with me via{" "}
-          <Link href="mailto:cemalokten@gmail.com">email</Link>,{" "}
-          <Link href="https://twitter.com/cemalokten">twitter</Link> or{" "}
-          <Link href="https://github.com/cemalokten">github</Link>.
+          <Link href="mailto:cemalokten@gmail.com">Email</Link>,{" "}
+          <Link href="https://twitter.com/cemalokten">Twitter</Link> or{" "}
+          <Link href="https://github.com/cemalokten">GitHub</Link>.
         </Text>
       </Flex>
       {tag.map((tagProps: TagProps, id: number) => (

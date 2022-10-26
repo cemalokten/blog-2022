@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Tag as TagType } from "../../constants/Types";
 
 export const _Tag = styled.span<TagType>`
-  font-family: "Lab Mono";
+  font-family: "Lab Mono", Helvetica, Arial, sans-serif;
   font-weight: 400;
   position: absolute;
   display: flex;
