@@ -20,8 +20,6 @@ This is my current setup:
 - ~~Express~~
 - Hosted for free on Netlify
 
-![old-site](https://user-images.githubusercontent.com/60609268/235691530-64f7d755-0db6-41fa-8cc8-6db9d648da6f.png)
+![Screenshot 2023-05-02 at 15 13 53](https://user-images.githubusercontent.com/60609268/235692963-9e23f02c-b4a1-46e8-be9c-a6cbeba947f7.png)
+![Screenshot 2023-05-02 at 15 14 00](https://user-images.githubusercontent.com/60609268/235692978-16d089f1-c356-4d08-8061-a19005a01040.png)
 
-### Other designs
-
-![](https://i.imgur.com/v1PokV3.png)
