@@ -1,6 +1,4 @@
-### Personal blog (depreciated)
-
-![old-site](https://user-images.githubusercontent.com/60609268/235691530-64f7d755-0db6-41fa-8cc8-6db9d648da6f.png)
+## Personal blog (depreciated)
 
 Here are some things that I've discovered while working on this site:
 
@@ -21,6 +19,8 @@ This is my current setup:
 - ~~Node.js~~
 - ~~Express~~
 - Hosted for free on Netlify
+
+![old-site](https://user-images.githubusercontent.com/60609268/235691530-64f7d755-0db6-41fa-8cc8-6db9d648da6f.png)
 
 ### Other designs
 
